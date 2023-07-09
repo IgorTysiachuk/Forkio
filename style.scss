@@ -8,14 +8,68 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position-x: center;
+        &_add {
+            height: 18px;
+            width: 100%;
+            background: #27262A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &_nav {
+                column-gap: 47px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 60%;
+                height: 18px;
+                &_a {
+                    text-decoration: none;
+                    color: #ffffff;
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 18px;
+                    &:hover {
+                        color: #8D81AC;
+                    }
+                }
+            }
+        }
         &_headeradd {
             width: 100%;
             height: 100px;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            column-gap: 20%;
             align-items: center;
+            background: #27262A;
+            position: relative;
+            &_menu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                row-gap: 6px;
+                display: none;
+                &:focus {
+                    display: none;
+                }
+                &_img1 {
+                    width: 15px;
+                    height: 3px;
+                    margin-left: 11px;
+                }
+            }
+            &_cross {
+                position: absolute;
+                display: none;
+                &:hover {
+                    display: none;
+                }
+            }
+
             &_nav {
-                width: 50%;
+                column-gap: 48px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -26,6 +80,11 @@
                     font-style: normal;
                     font-weight: 700;
                     line-height: 15px;
+                    display: block;
+                    cursor: pointer;
+                    &:hover {
+                        color: #8D81AC;
+                    }
                 }
                 &_btn {
                     border-radius: 40px;
@@ -40,6 +99,13 @@
                     line-height: 17px;
                     width: 145px;
                     height: 37px;
+                    cursor: pointer;
+                    transition-duration: 0.15s;
+                    &:hover {
+                        background-color: #8D81AC;
+                        color: white;
+                        transition-duration: 0.3s;
+                    }
                 }
             }
         }
@@ -100,6 +166,13 @@
         font-style: normal;
         font-weight: 700;
         line-height: 22px;
+        cursor: pointer;
+        transition-duration: 0.15s;
+        &:hover {
+            background: #8D81AC;
+            color: white;
+            transition-duration: 0.3s;
+        }
     }
     &_p1 {
         color: #848E97;
@@ -109,5 +182,134 @@
         font-style: normal;
         font-weight: 400;
         line-height: 15px;
+    }
+}
+@media only screen and (max-width: 3000px) and (min-width: 1200px) {
+    .header {
+        &_back {
+            &_headeradd {
+                &_logo2 {
+                    display: none;
+                }
+            }
+            &_add {
+                display: none;
+            }
+        }
+    }
+    .blockitems {
+        display: none;
+    }
+}
+@media screen and (max-width:1200px) {
+    .header {
+        &_back {
+            &_headeradd {
+
+                height: 70px;
+                column-gap: 55%;
+                &_logo2 {
+                    display: none;
+                }
+            }
+            &_add {
+                height: 48px;
+                &_nav {
+                    width: 80%;
+                }
+            }
+        }
+    }
+    .hide1200px {
+        display: none;
+    }
+    .blockitems {
+        display: none;
+    }
+    .buttons {
+        margin-top: 400px;
+    }
+}
+@media screen and (max-width:768px) {
+    .header {
+        &_back {
+            &_add {
+                display: none;
+            }
+            &_headeradd {
+                justify-content: start;
+                column-gap: 0;
+                &_logo2 {
+                    display: block;
+                    margin-left: 40px;
+                }
+                &_logo1 {
+                    display: none;
+                }
+                &_menu {
+                    display: flex;
+                    top: 25px;
+                    right: 40px;
+                    &:hover + .cross {
+                        display: block;
+                    }
+                    
+                }
+                &_cross {
+                    top: 25px;
+                    right: 40px;
+                    transform: translateX(-0.5px);
+                    transform: scale(1.1);
+                }
+                &_nav {
+                    margin: 0 auto 0 auto;
+                    &_btn {
+                        transform: translateX(-30px);
+                    }
+                }
+            }
+        }
+    }
+    .buttons {
+        width: 290px;
+        &_btn {
+            width: 290px;
+            height: 45px;
+            color: #8D81AC;
+            text-align: center;
+            font-family: Montserrat;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px;
+        }
+    }
+    .headertext {
+        &_p1 {
+            margin: 0 auto 0 auto;
+            width: 95%;
+            color: #FFF;
+            text-align: center;
+            font-family: Montserrat;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 48px;
+        }
+        &_p2 {
+            margin: 0 auto 0 auto;
+            width: 95%;
+        }
+    }
+    .blockitems {
+        display: none;
+    }
+    .buttons {
+        margin-top: 460px;
+    }
+}
+@media screen and (max-width:366px) {
+    .buttons {
+        margin-top: 430px;
     }
 }
